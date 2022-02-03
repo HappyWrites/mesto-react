@@ -45,35 +45,31 @@ function App() {
           <Footer />
         </div >
       </div >
-      <PopupWithForm isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} title='Редактировать профиль' name='edit-profile'>
+
+      <PopupWithForm isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} title='Редактировать профиль' name='edit-profile' buttonName="Сохранить">
         <input id="name-input" className="popup__input popup__input_type_name" required minLength="2" maxLength="40"
           type="text" placeholder="Жак-Ив Кусто" name="name" />
         <span className="name-input-error popup__input-error"></span>
         <input id="about-input" className="popup__input popup__input_type_about-me" required minLength="2" maxLength="200"
           type="text" placeholder="Исследователь океана" name="about" />
         <span className="about-input-error popup__input-error"></span>
-        <button className="popup__save popup__save_type_edit" type="submit">Сохранить</button>
       </PopupWithForm>
 
-      <PopupWithForm isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} title='Новое место' name='add'>
+      <PopupWithForm isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} title='Новое место' name='add' buttonName="Создать">
         <input id="place-input" className="popup__input popup__input_type_name popup__input_type_place" required
           minLength="2" maxLength="30" type="text" placeholder="Название" name="name" />
         <span className="place-input-error popup__input-error"></span>
         <input id="link-input" className="popup__input popup__input_type_about-me popup__input_type_link" required
           type="url" placeholder="Ссылка на картинку" name="link" />
         <span className="link-input-error popup__input-error"></span>
-        <button disabled className="popup__save popup__save_type_add" type="submit">Создать</button>
       </PopupWithForm>
 
-      <PopupWithForm title='Вы уверены?' name='trash' subtitle='Да' onClose={closeAllPopups}>
-        <button className="popup__save popup__save_type_trash" type="submit">Да</button>
-      </PopupWithForm>
+      <PopupWithForm title='Вы уверены?' name='trash' subtitle='Да' onClose={closeAllPopups} buttonName="Да" />
 
-      <PopupWithForm isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} title='Обновить аватар' name='edit-avatar'>
+      <PopupWithForm isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} title='Обновить аватар' name='edit-avatar' buttonName="Сохранить" >
         <input id="avatar-input" className="popup__input popup__input_type_avatar" required minLength="2" maxLength="150"
           type="text" placeholder="Ссылка" name="avatar" />
         <span className="avatar-input-error popup__input-error"></span>
-        <button disabled className="popup__save popup__save_type_edit-avatar" type="submit">Сохранить</button>
       </PopupWithForm>
 
       <ImagePopup card={selectedCard} onClose={closeAllPopups} />
