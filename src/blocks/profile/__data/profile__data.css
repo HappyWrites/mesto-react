@@ -3,10 +3,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 42px;
 }
 
 @media screen and (min-width: 768px) {
   .profile__data {
     flex-direction: row;
+    margin-top: 0;
   }
 }
