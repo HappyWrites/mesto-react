@@ -20,7 +20,7 @@
   background-color: rgba(0, 0, 0, 0.8);
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 50%;
+  border-radius: 45%;
   opacity: 0;
   transition: opacity 0.5s ease-in;
 }
