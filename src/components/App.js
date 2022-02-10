@@ -118,47 +118,45 @@ function App() {
 
 
   return (
-    <>
-      <CurrentUserContext.Provider value={currentUser}>
-        <div className="page">
-          <div className="page__content">
-            <Header />
-            <Main
-              onEditProfile={handleEditProfileClick}
-              onAddPlace={handleAddPlaceClick}
-              onEditAvatar={handleEditAvatarClick}
-              onCardClick={handleCardClick}
-              cards={cards}
-              handleCardLike={handleCardLike}
-              handleCardDelete={handleCardDelete}
-            />
-            <Footer />
-          </div >
+    <CurrentUserContext.Provider value={currentUser}>
+      <div className="page">
+        <div className="page__content">
+          <Header />
+          <Main
+            onEditProfile={handleEditProfileClick}
+            onAddPlace={handleAddPlaceClick}
+            onEditAvatar={handleEditAvatarClick}
+            onCardClick={handleCardClick}
+            cards={cards}
+            handleCardLike={handleCardLike}
+            handleCardDelete={handleCardDelete}
+          />
+          <Footer />
         </div >
+      </div >
 
-        <EditProfilePopup
-          isOpen={isEditProfilePopupOpen}
-          onClose={closeAllPopups}
-          onUpdateUser={handleUpdateUser} />
+      <EditProfilePopup
+        isOpen={isEditProfilePopupOpen}
+        onClose={closeAllPopups}
+        onUpdateUser={handleUpdateUser} />
 
-        <AddPlacePopup
-          isOpen={isAddPlacePopupOpen}
-          onClose={closeAllPopups}
-          onAddPlace={handleAddPlaceSubmit}
-        />
+      <AddPlacePopup
+        isOpen={isAddPlacePopupOpen}
+        onClose={closeAllPopups}
+        onAddPlace={handleAddPlaceSubmit}
+      />
 
-        <EditAvatarPopup
-          isOpen={isEditAvatarPopupOpen}
-          onClose={closeAllPopups}
-          onUpdateAvatar={handleUpdateAvatar} />
+      <EditAvatarPopup
+        isOpen={isEditAvatarPopupOpen}
+        onClose={closeAllPopups}
+        onUpdateAvatar={handleUpdateAvatar} />
 
-        <ImagePopup
-          card={selectedCard}
-          onClose={closeAllPopups}
-        />
+      <ImagePopup
+        card={selectedCard}
+        onClose={closeAllPopups}
+      />
 
-      </CurrentUserContext.Provider>
-    </>
+    </CurrentUserContext.Provider>
   );
 }
 
